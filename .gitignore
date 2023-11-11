@@ -1,0 +1,5 @@
+# ignore build/ folder
+**/build*/**
+
+# qtcreator generated files
+**/*.pro.user*

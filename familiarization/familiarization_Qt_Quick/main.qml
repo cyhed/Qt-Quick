@@ -16,6 +16,7 @@ Window {
         font.pointSize: 14
         style: Text.Sunken
 
+
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter:  parent.verticalCenter
 
