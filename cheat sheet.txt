@@ -1,0 +1,1 @@
+new project -> qt quck application (compat) -> размещение -> система сборки(qmake)
