@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/icon">
-        <file>icon/menu_24dp_E8EAED.svg</file>
-        <file>icon/close.svg</file>
-    </qresource>
-</RCC>
