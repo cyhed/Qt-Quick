@@ -1,1 +1,21 @@
+
+# Созданеи проекта под qmake 
 new project -> qt quck application (compat) -> размещение -> система сборки(qmake)
+
+
+# Проблема отсутсвия QtPositioning и QtLocation
+-1: ошибка: Project ERROR: Unknown module(s) in QT: qtlocation
+Установка tPositioning и QtLocation 
+
+Обновите "Qt Maintenance Tool":
+ - запустите его через Qt Creator : панель "иструменты" -> Qt Maintenance Tool -> старт Maintenance Tool
+ или С:\Qt\
+ - проделайте необходимые шаги(проверка обновления) чтоб дойти до вкладки "Компоненты"
+ - найдите в списке Maintenance Tool и установите последнюю версию
+ - перезапустите Maintenance Tool
+ - снова дойдите до вкладки "Компоненты"
+ - введите в поиске Positioning
+ - в моем случае Для моей версии Qt 6.6.0 не было  Additional Libraries (списока библиотек), 
+поэтому я установил последнюю версию Qt 6.8.0, 
+а к нему компоненты Android, MinGW 13.1.0 64bit, Additional Libraries -> Qt Positioning, Additional Libraries -> Qt Location 
+ - когда установилось заходим в Qt Creator -> (слева в меню) вкладка Проекты -> Сбока и запуск -> добавить скачаную версию
