@@ -2,8 +2,8 @@ import QtQuick 2.12
 import QtQuick.Window 2.12
 import QtQuick.Controls
 
-import QtLocation 5.12
-import QtPositioning 5.12
+import QtPositioning 5.15
+import QtLocation 5.15
 ApplicationWindow {
     id: window
 
