@@ -1,2 +1,8 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/icon">
+        <file alias="list">icon/receipt_long_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg</file>
+        <file alias="map">icon/map_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg</file>
+        <file alias="pin">icon/location_on_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg</file>
+        <file alias="planet">icon/public_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg</file>
+    </qresource>
+</RCC>

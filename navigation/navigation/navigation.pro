@@ -1,9 +1,9 @@
 QT += quick
 QT += quickcontrols2
-
-QT += positioning
+QT += qml quick location
+#QT += positioning
 #T += qml quick location
-QT += location
+#QT += location
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
