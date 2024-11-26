@@ -31,7 +31,7 @@ ApplicationWindow {
                 if (stackView.depth === 1) {
                     previousElement = 1
                     stackView.push(page2)
-                    currentIcon = "qrc:/icon/map"
+                    currentIcon = "qrc:/icon/planet"
                 } else if (stackView.depth === 2 && previousElement === 1) {
                     currentIcon = "qrc:/icon/list"
                     stackView.pop()
@@ -150,7 +150,9 @@ ApplicationWindow {
                     onClicked: {
                         var coordinate = map.toCoordinate(Qt.point(mouse.x, mouse.y))
                         if (map.marker) {
+                            map.marker = markerComponent.createObject(map)
                             map.marker.coordinate = coordinate
+                            map.addMapItem(map.marker)
                         } else {
                             map.marker = markerComponent.createObject(map)
                             map.marker.coordinate = coordinate
@@ -167,7 +169,9 @@ ApplicationWindow {
                     onPressAndHold: {
                         var coordinate = map.toCoordinate(Qt.point(mouse.x, mouse.y))
                         if (map.marker) {
+                            map.marker = markerComponent.createObject(map)
                             map.marker.coordinate = coordinate
+                            map.addMapItem(map.marker)
                         } else {
                             map.marker = markerComponent.createObject(map)
                             map.marker.coordinate = coordinate
