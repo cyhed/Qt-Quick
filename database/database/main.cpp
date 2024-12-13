@@ -1,5 +1,11 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
+#include <QQmlContext>
+#include <QQuickStyle>
+#include "database.h"
+#include "listmodel.h"
 
 int main(int argc, char *argv[])
 {
@@ -8,7 +14,17 @@ int main(int argc, char *argv[])
 #endif
     QGuiApplication app(argc, argv);
 
+    QQuickStyle::setStyle("Material");
+
+    database database;
+    database.connectToDataBase();
+    listmodel *model = new listmodel();
+
     QQmlApplicationEngine engine;
+
+    engine.rootContext()->setContextProperty("myModel", model);
+    engine.rootContext()->setContextProperty("database", &database);
+
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(
         &engine,

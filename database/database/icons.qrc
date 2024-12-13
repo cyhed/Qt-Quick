@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="add_call">icons/add_call_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg</file>
+        <file alias="first_page">icons/first_page_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg</file>
+        <file alias="person_add">icons/person_add_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg</file>
+    </qresource>
+</RCC>
