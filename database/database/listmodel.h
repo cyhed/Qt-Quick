@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QSqlQueryModel>
 
+#include "database.h"
+
 class listmodel : public QSqlQueryModel
 {
     Q_OBJECT

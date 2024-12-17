@@ -1,6 +1,6 @@
 #include "listmodel.h"
-#include "database.h"
-#include <QSqlQueryModel>
+
+
 
 listmodel::listmodel(QObject *parent): QSqlQueryModel(parent) {
     this->updateModel();
