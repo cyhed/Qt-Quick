@@ -1,14 +1,14 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 
-#define DATABASE_HOSTNAME "Contacts"
-#define DATABASE_NAME "Contacts.db"
-#define TABLE "Man"
+#define DATABASE_HOSTNAME "Contacts3"
+#define DATABASE_NAME "Contacts3.db"
+#define TABLE "Man3"
 #define TABLE_FNAME "FirstName"
 #define TABLE_SNAME "SurName"
 #define TABLE_MNAME "MidleName"
-#define TABLE_HEIGHT "Height"
-#define TABLE_WEIGHT "Weight"
+#define TABLE_POSTINDEX "PostIndex"
+
 
 
 #include <QObject>
@@ -40,7 +40,7 @@ private:
 
 public slots:
     bool insertIntoTable(const QVariantList &data);
-    bool insertIntoTable(const QString &fname, const QString &sname, const QString &mname, const QString &height,const QString &weight);
+    bool insertIntoTable(const QString &fname, const QString &sname, const QString &mname, const QString &postIndex);
     bool removeRecord(const int id);
 };
 

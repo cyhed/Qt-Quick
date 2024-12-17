@@ -17,8 +17,7 @@ public:
         FNameRole,
         SNameRole,
         MNameRole,
-        HeightRole,
-        WeightRole
+        PostIndexRole
     };
 
     QVariant data(const QModelIndex & index, int role = Qt::DisplayRole) const;

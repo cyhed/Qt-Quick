@@ -18,14 +18,13 @@ QHash<int, QByteArray> listmodel::roleNames() const {
     roles[FNameRole] = "FirstName";
     roles[SNameRole] = "SurName";
     roles[MNameRole] = "MidleName";
-    roles[HeightRole] = "Height";
-    roles[WeightRole] = "Weight";
+    roles[PostIndexRole] = "PostIndex";
     return roles;
 }
 
 void listmodel::updateModel()
 {
-    this->setQuery("SELECT id, " TABLE_FNAME ", " TABLE_SNAME ", " TABLE_MNAME ", " TABLE_HEIGHT ", " TABLE_WEIGHT " FROM " TABLE);
+    this->setQuery("SELECT id, " TABLE_FNAME ", " TABLE_SNAME ", " TABLE_MNAME ", " TABLE_POSTINDEX " FROM " TABLE);
 }
 
 int listmodel::getId(int row){

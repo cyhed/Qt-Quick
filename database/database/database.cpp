@@ -55,8 +55,7 @@ bool database::createTable() {
                     TABLE_FNAME " VARCHAR(255) NOT NULL, "
                     TABLE_SNAME " VARCHAR(255) NOT NULL, "
                     TABLE_MNAME " VARCHAR(255) NOT NULL, "
-                    TABLE_HEIGHT " VARCHAR(255) NOT NULL, "
-                    TABLE_WEIGHT " VARCHAR(255) NOT NULL"
+                    TABLE_POSTINDEX " VARCHAR(255) NOT NULL"
                     " );"
                     )) {
         qDebug() << "Database: error creating table " << TABLE;
@@ -71,14 +70,14 @@ bool database::createTable() {
 
 bool database:: insertIntoTable(const QVariantList &data){
     QSqlQuery query;
-    query.prepare("INSERT INTO " TABLE "(" TABLE_FNAME ", " TABLE_SNAME ", " TABLE_MNAME", " TABLE_HEIGHT ", " TABLE_WEIGHT ") "
-                  "VALUES (:FirstName, :SurName, :MidleName, :Height, :Weight);");
+    query.prepare("INSERT INTO " TABLE "(" TABLE_FNAME ", " TABLE_SNAME ", " TABLE_MNAME", " TABLE_POSTINDEX  ") "
+                  "VALUES (:FirstName, :SurName, :MidleName, :PostIndex);");
 
     query.bindValue(":FirstName", data[0].toString());
     query.bindValue(":SurName", data[1].toString());
     query.bindValue(":MidleName", data[2].toString());
-    query.bindValue(":Height", data[3].toString());
-    query.bindValue(":Weight", data[4].toString());
+    query.bindValue(":PostIndex", data[3].toString());
+
 
     if(!query.exec()){
         qDebug() << "error insert into" << TABLE;
@@ -91,19 +90,19 @@ bool database:: insertIntoTable(const QVariantList &data){
 }
 
 //main
-bool database::insertIntoTable(const QString &fname, const QString &sname, const QString &mname, const QString &height, const QString &weight){
+bool database::insertIntoTable(const QString &fname, const QString &sname, const QString &mname, const QString &postIndex){
     QVariantList data;
     data.append(fname);
     data.append(sname);
     data.append(mname);
-    data.append(height);
-    data.append(weight);
+    data.append(postIndex);
+
 
     qDebug() << fname;
     qDebug() << sname;
     qDebug() << mname;
-    qDebug() << height;
-    qDebug() << weight;
+    qDebug() << postIndex;
+
     if(insertIntoTable(data)){
         return true;
     }else{

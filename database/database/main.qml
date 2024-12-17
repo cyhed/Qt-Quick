@@ -60,13 +60,12 @@ ApplicationWindow {
             anchors.right: parent.right
             icon.source: "qrc:/icons/person_add"
             onClicked: {
-                database.insertIntoTable(fnames, snames, mnames, heights, weights);
+                database.insertIntoTable(fnames, snames, mnames, weights);
                 myModel.updateModel();
 
                 fnameField.clear();
                 snameField.clear();
-                mnameField.clear();
-                heightField.clear();
+                mnameField.clear();                
                 weightField.clear();
             }
         }
@@ -100,7 +99,7 @@ ApplicationWindow {
 
                         RoundButton {
                             anchors.fill: parent
-                            text: FirstName + " " + SurName + " " + MidleName + "\n" + Height + "\n" + Weight
+                            text: FirstName + " " + SurName + " " + MidleName + "\n" + PostIndex
                             background: Rectangle {
                                 color: "#1E1E1E"
                                 radius: 50
@@ -176,33 +175,20 @@ ApplicationWindow {
                         }
                     }
                     TextField {
-                        id: heightField
+                        id: postIndexField
                         Material.foreground: "white"
                         Material.background: "#1E1E1E"
-                        placeholderText: "Enter Height(сm)"
+                        placeholderText: "Enter Post Index"
                         Layout.fillWidth: true
                         onTextChanged: {
-                            if(text.length > 3){
-                                text = text.substring(0,3);
+                            if(text.length > 9){
+                                text = text.substring(0,9);
                             }
-                            text = text.replace(/[^0-9]/g, "");
+                            text = text.replace(/[^0-9a-z]/g, "");
                             heights = text;
                         }
                     }
-                    TextField {
-                        id: weightField
-                        Material.foreground: "white"
-                        Material.background: "#1E1E1E"
-                        placeholderText: "Enter Weight(kg)"
-                        Layout.fillWidth: true
-                        onTextChanged: {
-                            if(text.length > 3){
-                                text = text.substring(0,3);
-                            }
-                            text = text.replace(/[^0-9]/g, "");
-                            weights = text;
-                        }
-                    }
+
 
                     Button {
                         id: insertBtn
@@ -210,14 +196,14 @@ ApplicationWindow {
                         Layout.fillWidth: true
                         Material.background: "#006400"
                         onClicked: {
-                            database.insertIntoTable(fnameField.text, snameField.text, mnameField.text, heightField.text, weightField.text);
+                            database.insertIntoTable(fnameField.text, snameField.text, mnameField.text, postIndexField.text);
                             myModel.updateModel();
 
                             fnameField.clear();
                             snameField.clear();
                             mnameField.clear();
-                            heightField.clear();
-                            weightField.clear();
+                            postIndexField.clear();
+
                         }
                     }
                 }
